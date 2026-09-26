@@ -1,0 +1,54 @@
+[
+  {
+    "_id": "6a8a464a4e32e9cff14e6df0",
+    "clientNumber": "STW-CL-00101",
+    "firstName": "Olympia",
+    "lastName": "Hotels",
+    "type": "corporate",
+    "email": "legal@olympia.com",
+    "status": "active",
+    "assignedLawyers": [
+      "6a8a464a4e32e9cff14e6dee"
+    ],
+    "createdAt": "2026-08-23T01:00:58.868Z"
+  },
+  {
+    "_id": "6a8a464a4e32e9cff14e6df1",
+    "clientNumber": "STW-CL-00102",
+    "firstName": "David",
+    "lastName": "Ojo",
+    "type": "individual",
+    "email": "dojo@demo.com",
+    "status": "active",
+    "assignedLawyers": [
+      "6a8a464a4e32e9cff14e6dee"
+    ],
+    "createdAt": "2026-08-23T01:00:58.868Z"
+  },
+  {
+    "_id": "6a8abf7e53e0634211d8f249",
+    "clientNumber": "STW-CL-0012",
+    "type": "corporate",
+    "firstName": "smartskep solutions limited",
+    "email": "pending@client.com",
+    "assignedLawyers": [],
+    "status": "active",
+    "createdAt": "2026-08-23T09:38:06.508Z",
+    "updatedAt": "2026-08-23T09:38:06.508Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a8ac594f299646d3044290c",
+    "clientNumber": "STW-CL-0013",
+    "type": "individual",
+    "firstName": "Oghenemudiakevwe",
+    "lastName": "Okpako",
+    "email": "dev.eseokpako@gmail.com",
+    "phone": "09012757248",
+    "assignedLawyers": [],
+    "status": "active",
+    "createdAt": "2026-08-23T10:04:04.042Z",
+    "updatedAt": "2026-08-23T10:04:04.042Z",
+    "__v": 0
+  }
+]

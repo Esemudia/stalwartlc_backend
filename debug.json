@@ -1,0 +1,62 @@
+[
+  {
+    "_id": "6a8a464a4e32e9cff14e6df3",
+    "documentNumber": "STW-DOC-0050",
+    "name": "Concession Terms v4",
+    "originalFileName": "terms.pdf",
+    "clientId": "6a8a464a4e32e9cff14e6df0",
+    "matterId": "6a8a464a4e32e9cff14e6df2",
+    "category": "contract",
+    "uploadedBy": "6a8a464a4e32e9cff14e6dee",
+    "currentVersion": 2,
+    "status": "draft",
+    "tags": [],
+    "confidentiality": "standard",
+    "createdAt": "2026-08-23T01:00:58.879Z"
+  },
+  {
+    "_id": "6a8ad7e8f299646d30442910",
+    "documentNumber": "STW-DOC-2910",
+    "name": "Statement of purpose",
+    "originalFileName": "Statement of Purpose.docx",
+    "matterId": "6a8a464a4e32e9cff14e6df2",
+    "category": "brief",
+    "currentVersion": 1,
+    "status": "draft",
+    "confidentiality": "standard",
+    "tags": [],
+    "createdAt": "2026-08-23T11:22:16.499Z",
+    "updatedAt": "2026-08-23T11:22:16.499Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a8ae8c6bf584d644935c844",
+    "documentNumber": "STW-DOC-2052",
+    "name": "tyt",
+    "originalFileName": "FACIAL RECOGNITION ATTENDANCE SYSTEM FOR OFFICE.docx",
+    "matterId": "6a8a464a4e32e9cff14e6df2",
+    "category": "evidence",
+    "currentVersion": 1,
+    "status": "draft",
+    "confidentiality": "standard",
+    "tags": [],
+    "createdAt": "2026-08-23T12:34:14.246Z",
+    "updatedAt": "2026-08-23T12:34:14.246Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a8ae8edbf584d644935c845",
+    "documentNumber": "STW-DOC-7545",
+    "name": "tesr",
+    "originalFileName": "Bloodmane_Concept_Note.pdf",
+    "matterId": "6a8a464a4e32e9cff14e6df2",
+    "category": "evidence",
+    "currentVersion": 1,
+    "status": "draft",
+    "confidentiality": "standard",
+    "tags": [],
+    "createdAt": "2026-08-23T12:34:53.634Z",
+    "updatedAt": "2026-08-23T12:34:53.634Z",
+    "__v": 0
+  }
+]
