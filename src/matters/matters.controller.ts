@@ -44,7 +44,18 @@ export class MattersController {
         if (headerRole === 'lawyer') {
             throw new ForbiddenException('Only Administrators have permission to register new matters.');
         }
-        const createdMatter = new this.matterModel(createMatterDto);
+        const payload = { ...createMatterDto };
+        if (payload.courtName && !payload.court?.name) {
+            payload.court = { ...(payload.court || {}), name: payload.courtName };
+        } else if (payload.court?.name && !payload.courtName) {
+            payload.courtName = payload.court.name;
+        }
+        if (payload.suitNumber && !payload.court?.suitNumber) {
+            payload.court = { ...(payload.court || {}), suitNumber: payload.suitNumber, caseNumber: payload.suitNumber };
+        } else if (payload.court?.suitNumber && !payload.suitNumber) {
+            payload.suitNumber = payload.court.suitNumber;
+        }
+        const createdMatter = new this.matterModel(payload);
         return await createdMatter.save();
     }
 
@@ -97,7 +108,18 @@ export class MattersController {
 
     @Patch(':id')
     async update(@Param('id') id: string, @Body() updateMatterDto: any) {
-        return await this.matterModel.findByIdAndUpdate(id, updateMatterDto, { new: true }).exec();
+        const payload = { ...updateMatterDto };
+        if (payload.courtName && !payload.court?.name) {
+            payload.court = { ...(payload.court || {}), name: payload.courtName };
+        } else if (payload.court?.name && !payload.courtName) {
+            payload.courtName = payload.court.name;
+        }
+        if (payload.suitNumber && !payload.court?.suitNumber) {
+            payload.court = { ...(payload.court || {}), suitNumber: payload.suitNumber, caseNumber: payload.suitNumber };
+        } else if (payload.court?.suitNumber && !payload.suitNumber) {
+            payload.suitNumber = payload.court.suitNumber;
+        }
+        return await this.matterModel.findByIdAndUpdate(id, payload, { new: true }).exec();
     }
 
     @Post(':id/assign')

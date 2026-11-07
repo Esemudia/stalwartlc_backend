@@ -33,7 +33,7 @@ exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            mongoose_1.MongooseModule.forRoot(process.env.MONGODB_URI || 'mongodb://localhost:27017/stalwartlc'),
+            mongoose_1.MongooseModule.forRoot(process.env.MONGODB_UR || ""),
             schedule_1.ScheduleModule.forRoot(),
             auth_module_1.AuthModule,
             invoices_module_1.InvoicesModule,

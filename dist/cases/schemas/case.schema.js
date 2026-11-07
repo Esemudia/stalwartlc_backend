@@ -50,6 +50,7 @@ let Case = class Case {
     clientName;
     clientId;
     court;
+    suitNumber;
     claimValue;
     opposingParty;
     updates;
@@ -115,6 +116,11 @@ __decorate([
     (0, mongoose_1.Prop)(),
     __metadata("design:type", String)
 ], Case.prototype, "court", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, mongoose_1.Prop)(),
+    __metadata("design:type", String)
+], Case.prototype, "suitNumber", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)(),
     (0, mongoose_1.Prop)(),

@@ -1,4 +1,6 @@
 import { Document as MongooseDoc, Types } from 'mongoose';
+export declare const DOCUMENT_CATEGORIES: readonly ["Court Processes", "Exhibits"];
+export type DocumentCategory = typeof DOCUMENT_CATEGORIES[number];
 export declare class AppDocument extends MongooseDoc {
     documentNumber: string;
     name: string;

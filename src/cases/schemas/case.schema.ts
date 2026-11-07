@@ -68,6 +68,10 @@ export class Case {
 
     @ApiProperty()
     @Prop()
+    suitNumber: string;
+
+    @ApiProperty()
+    @Prop()
     claimValue: number;
 
     @ApiProperty()

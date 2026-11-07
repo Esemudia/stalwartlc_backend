@@ -9,9 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppDocumentSchema = exports.AppDocument = void 0;
+exports.AppDocumentSchema = exports.AppDocument = exports.DOCUMENT_CATEGORIES = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
+exports.DOCUMENT_CATEGORIES = ['Court Processes', 'Exhibits'];
 let AppDocument = class AppDocument extends mongoose_2.Document {
     documentNumber;
     name;
@@ -50,7 +51,7 @@ __decorate([
     __metadata("design:type", mongoose_2.Types.ObjectId)
 ], AppDocument.prototype, "matterId", void 0);
 __decorate([
-    (0, mongoose_1.Prop)(),
+    (0, mongoose_1.Prop)({ default: 'Court Processes', enum: ['Court Processes', 'Exhibits', 'court_processes', 'exhibits', 'court_process', 'exhibit', 'pleading', 'evidence', 'brief', 'contract', 'correspondence', 'other'] }),
     __metadata("design:type", String)
 ], AppDocument.prototype, "category", void 0);
 __decorate([

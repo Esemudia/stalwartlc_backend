@@ -9,15 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MatterSchema = exports.Matter = void 0;
+exports.MatterSchema = exports.Matter = exports.COURTS = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
+exports.COURTS = [
+    'State High Court',
+    'Federal High Court',
+    'Court of Appeal',
+    'Supreme Court',
+];
 let Matter = class Matter extends mongoose_2.Document {
     matterNumber;
     title;
     clientId;
     description;
     matterType;
+    suitNumber;
+    courtName;
     status;
     priority;
     assignedPartnerId;
@@ -49,9 +57,17 @@ __decorate([
     __metadata("design:type", String)
 ], Matter.prototype, "description", void 0);
 __decorate([
-    (0, mongoose_1.Prop)(),
+    (0, mongoose_1.Prop)({ default: 'Litigation' }),
     __metadata("design:type", String)
 ], Matter.prototype, "matterType", void 0);
+__decorate([
+    (0, mongoose_1.Prop)(),
+    __metadata("design:type", String)
+], Matter.prototype, "suitNumber", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ enum: [...exports.COURTS, ''] }),
+    __metadata("design:type", String)
+], Matter.prototype, "courtName", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ default: 'active' }),
     __metadata("design:type", String)

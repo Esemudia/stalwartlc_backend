@@ -20,6 +20,7 @@ export declare class Case {
     clientName: string;
     clientId: User;
     court: string;
+    suitNumber: string;
     claimValue: number;
     opposingParty: string;
     updates: CaseUpdate[];
@@ -133,6 +134,15 @@ export declare const CaseSchema: import("mongoose").Schema<Case, import("mongoos
         id: string;
     }>> | undefined;
     court?: import("mongoose").SchemaDefinitionProperty<string, Case, Document<unknown, {}, Case, {
+        id: string;
+    }, import("mongoose").DefaultSchemaOptions> & Omit<Case & {
+        _id: Types.ObjectId;
+    } & {
+        __v: number;
+    }, "id"> & import("mongoose").HydratedDocumentOverrides<{
+        id: string;
+    }>> | undefined;
+    suitNumber?: import("mongoose").SchemaDefinitionProperty<string, Case, Document<unknown, {}, Case, {
         id: string;
     }, import("mongoose").DefaultSchemaOptions> & Omit<Case & {
         _id: Types.ObjectId;

@@ -1,10 +1,14 @@
 import { Document, Types } from 'mongoose';
+export declare const COURTS: readonly ["State High Court", "Federal High Court", "Court of Appeal", "Supreme Court"];
+export type CourtName = typeof COURTS[number];
 export declare class Matter extends Document {
     matterNumber: string;
     title: string;
     clientId: Types.ObjectId;
     description?: string;
     matterType?: string;
+    suitNumber?: string;
+    courtName?: string;
     status: string;
     priority: string;
     assignedPartnerId?: Types.ObjectId;
@@ -12,9 +16,11 @@ export declare class Matter extends Document {
     paralegalIds: Types.ObjectId[];
     court?: {
         name?: string;
+        suitNumber?: string;
         caseNumber?: string;
         location?: string;
         judge?: string;
+        division?: string;
     };
     opposingParty?: string;
     opposingCounsel?: string;
@@ -83,10 +89,21 @@ export declare const MatterSchema: import("mongoose").Schema<Matter, import("mon
     }>> | undefined;
     court?: import("mongoose").SchemaDefinitionProperty<{
         name?: string;
+        suitNumber?: string;
         caseNumber?: string;
         location?: string;
         judge?: string;
+        division?: string;
     } | undefined, Matter, Document<unknown, {}, Matter, {
+        id: string;
+    }, import("mongoose").DefaultSchemaOptions> & Omit<Matter & Required<{
+        _id: Types.ObjectId;
+    }> & {
+        __v: number;
+    }, "id"> & import("mongoose").HydratedDocumentOverrides<{
+        id: string;
+    }>> | undefined;
+    suitNumber?: import("mongoose").SchemaDefinitionProperty<string | undefined, Matter, Document<unknown, {}, Matter, {
         id: string;
     }, import("mongoose").DefaultSchemaOptions> & Omit<Matter & Required<{
         _id: Types.ObjectId;
@@ -123,6 +140,15 @@ export declare const MatterSchema: import("mongoose").Schema<Matter, import("mon
         id: string;
     }>> | undefined;
     matterType?: import("mongoose").SchemaDefinitionProperty<string | undefined, Matter, Document<unknown, {}, Matter, {
+        id: string;
+    }, import("mongoose").DefaultSchemaOptions> & Omit<Matter & Required<{
+        _id: Types.ObjectId;
+    }> & {
+        __v: number;
+    }, "id"> & import("mongoose").HydratedDocumentOverrides<{
+        id: string;
+    }>> | undefined;
+    courtName?: import("mongoose").SchemaDefinitionProperty<string | undefined, Matter, Document<unknown, {}, Matter, {
         id: string;
     }, import("mongoose").DefaultSchemaOptions> & Omit<Matter & Required<{
         _id: Types.ObjectId;

@@ -1,6 +1,9 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document as MongooseDoc, Types } from 'mongoose';
 
+export const DOCUMENT_CATEGORIES = ['Court Processes', 'Exhibits'] as const;
+export type DocumentCategory = typeof DOCUMENT_CATEGORIES[number];
+
 @Schema({ timestamps: true, collection: 'documents' })
 export class AppDocument extends MongooseDoc {
   @Prop({ required: true, unique: true }) documentNumber: string;
@@ -8,7 +11,7 @@ export class AppDocument extends MongooseDoc {
   @Prop({ required: true }) originalFileName: string;
   @Prop({ type: Types.ObjectId, ref: 'Client' }) clientId?: Types.ObjectId;
   @Prop({ type: Types.ObjectId, ref: 'Matter' }) matterId?: Types.ObjectId;
-  @Prop() category?: string;
+  @Prop({ default: 'Court Processes', enum: ['Court Processes', 'Exhibits', 'court_processes', 'exhibits', 'court_process', 'exhibit', 'pleading', 'evidence', 'brief', 'contract', 'correspondence', 'other'] }) category?: string;
   @Prop() description?: string;
   @Prop({ default: 1 }) currentVersion: number;
   @Prop({ default: 'draft' }) status: string;

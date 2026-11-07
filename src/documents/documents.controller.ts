@@ -103,6 +103,7 @@ export class DocumentsController {
 
         const createDto = {
             ...body,
+            category: (body.category && (body.category.toLowerCase().includes('exhibit') || body.category.toLowerCase().includes('evidence'))) ? 'Exhibits' : 'Court Processes',
             originalFileName: file.originalname,
             fileUrl: `/api/v1/documents/serve/${file.filename}`,
             uploadedBy: (headerId && Types.ObjectId.isValid(headerId)) ? new Types.ObjectId(headerId) : undefined
@@ -150,7 +151,12 @@ export class DocumentsController {
             }
         }
 
-        const created = new this.documentModel(createDto);
+        const normalizedDto = {
+            ...createDto,
+            category: (createDto.category && (createDto.category.toLowerCase().includes('exhibit') || createDto.category.toLowerCase().includes('evidence'))) ? 'Exhibits' : 'Court Processes'
+        };
+
+        const created = new this.documentModel(normalizedDto);
         return await created.save();
     }
 
@@ -198,6 +204,9 @@ export class DocumentsController {
 
     @Patch(':id')
     async update(@Param('id') id: string, @Body() updateDto: any) {
+        if (updateDto.category) {
+            updateDto.category = (updateDto.category.toLowerCase().includes('exhibit') || updateDto.category.toLowerCase().includes('evidence')) ? 'Exhibits' : 'Court Processes';
+        }
         return await this.documentModel.findByIdAndUpdate(id, updateDto, { new: true }).exec();
     }
 

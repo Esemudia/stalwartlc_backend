@@ -23,7 +23,7 @@ import { CommunicationsModule } from './communications/communications.module';
 @Module({
   imports: [
     MongooseModule.forRoot(
-      process.env.MONGODB_URI || 'mongodb+srv://eseokpako_db_user:CfL95q5exRRwRf3s@cluster0.sdkep3x.mongodb.net/?appName=Cluster0'
+      process.env.MONGODB_UR || "",
     ),
     ScheduleModule.forRoot(),
     AuthModule,
