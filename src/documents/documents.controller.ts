@@ -76,7 +76,8 @@ export class DocumentsController {
             },
         }),
         limits: {
-            fileSize: 20 * 1024 * 1024, // 20MB limit
+            fileSize: 50 * 1024 * 1024, // 50MB (generous headroom for 20MB files)
+            fieldSize: 50 * 1024 * 1024,
         },
     }))
     async uploadFile(

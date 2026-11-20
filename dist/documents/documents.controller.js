@@ -194,7 +194,8 @@ __decorate([
             },
         }),
         limits: {
-            fileSize: 20 * 1024 * 1024,
+            fileSize: 50 * 1024 * 1024,
+            fieldSize: 50 * 1024 * 1024,
         },
     })),
     __param(0, (0, common_1.UploadedFile)()),
