@@ -193,6 +193,9 @@ __decorate([
                 cb(null, `${file.fieldname}-${uniqueSuffix}${ext}`);
             },
         }),
+        limits: {
+            fileSize: 20 * 1024 * 1024,
+        },
     })),
     __param(0, (0, common_1.UploadedFile)()),
     __param(1, (0, common_1.Body)()),

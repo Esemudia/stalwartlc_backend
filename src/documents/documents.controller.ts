@@ -75,6 +75,9 @@ export class DocumentsController {
                 cb(null, `${file.fieldname}-${uniqueSuffix}${ext}`);
             },
         }),
+        limits: {
+            fileSize: 20 * 1024 * 1024, // 20MB limit
+        },
     }))
     async uploadFile(
         @UploadedFile() file: any,
